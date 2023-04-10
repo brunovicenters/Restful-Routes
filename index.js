@@ -9,7 +9,7 @@ app.get("/tacos", (req, res) => {
 
 app.post("/tacos", (req, res) => {
   const { meat, qty } = req.body;
-  res.send("Post /tacos response");
+  res.send(`You've ordered ${qty} ${meat} tacos`);
 });
 
 app.listen(3000, () => {
