@@ -31,6 +31,10 @@ app.get("/comments", (req, res) => {
   res.render("comments/index", { comments });
 });
 
+app.get("/comments/new", (req, res) => {
+  res.render("comments/new", { comments });
+});
+
 app.get("/tacos", (req, res) => {
   res.send("Get /tacos response");
 });
