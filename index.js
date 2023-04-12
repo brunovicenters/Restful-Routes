@@ -12,18 +12,22 @@ const comments = [
   {
     username: "Todd",
     comment: "lol thats so funny",
+    id: 1,
   },
   {
     username: "Skyler",
     comment: "I like to go birdwatching with my dog",
+    id: 2,
   },
   {
     username: "Sk8erBoi",
     comment: "Plz delete you account, Todd",
+    id: 3,
   },
   {
     username: "onlysayswoof",
     comment: "woof woof woof",
+    id: 4,
   },
 ];
 
@@ -39,6 +43,12 @@ app.post("/comments", (req, res) => {
   const { username, comment } = req.body;
   comments.push({ username, comment });
   res.redirect("/comments");
+});
+
+app.get("/comments/:id", (req, res) => {
+  const { id } = req.params;
+  const comment = comments.find((c) => c.id === parseInt(id));
+  res.render("comments/show", { comment });
 });
 
 app.get("/tacos", (req, res) => {
