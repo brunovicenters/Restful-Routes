@@ -11,7 +11,10 @@
       <h2><%= comment.comment %></h2>
       <cite><%= comment.username %></cite>
     </section>
-    <button><a href="/comments">Back</a></button>
-    <button><a href="/comments/<%=comment.id%>/edit">Edit</a></button>
+    <a href="/comments">Back</a>
+    <a href="/comments/<%=comment.id%>/edit">Edit</a>
+    <form method="POST" action="/comments/<%= comment.id %>?_method=DELETE">
+      <button>Delete</button>
+    </form>
   </body>
 </html>
